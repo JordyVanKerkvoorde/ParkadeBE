@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace ParkingAppAPI.Models {
     public class Entry {
+        public int Id { get; set; }
         #region Properties
         public DateTime TimeDay { get; set; }
         public int Occupied { get; set; }

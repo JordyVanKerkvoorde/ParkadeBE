@@ -12,7 +12,7 @@ namespace ParkingAppAPI.Data {
             _context = context;
         }
 
-        public async Task InitializeData() {
+        public void InitializeData() {
             _context.Database.EnsureDeleted();
             if (_context.Database.EnsureCreated()) {
                 var parkings = new List<Parking> {

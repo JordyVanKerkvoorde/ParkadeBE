@@ -9,7 +9,7 @@ using ParkingAppAPI.Models;
 namespace ParkingAppAPI.Data {
     public class ParkingContext : DbContext {
         public DbSet<Parking> Parkings { get; set; }
-        public ParkingContext(DbContextOptions<ParkingContext> options) : base(options) { 
+        public ParkingContext(DbContextOptions<ParkingContext> options) : base(options) {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
