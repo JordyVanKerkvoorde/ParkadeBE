@@ -31,11 +31,15 @@ namespace ParkingAppAPI.Models {
             Entries.Add(entry);
         }
 
+        public void AddRandomEntry() {
+            Entries.Add(NewRandomEntry());
+        }
+
         public Entry GetEntry(DateTime time) {
             return Entries.SingleOrDefault(e => e.TimeDay == time);
         }
 
-        public Entry GetNewestEntry() {
+        public Entry GetLatestEntry() {
             return Entries.OrderBy(e => e.TimeDay.TimeOfDay)
                     .ThenBy(e => e.TimeDay.Date)
                     .ThenBy(e => e.TimeDay.Year).FirstOrDefault();
@@ -48,7 +52,7 @@ namespace ParkingAppAPI.Models {
             if (!Entries.Any()) {
                 capacity = r.Next(100, MaxCap);
             } else {
-                capacity = GetNewestEntry().Occupied + r.Next(0, 20) - r.Next(0, 20);
+                capacity = GetLatestEntry().Occupied + r.Next(0, 20) - r.Next(0, 20);
                 if (capacity > MaxCap) {
                     capacity = MaxCap;
                 }
@@ -56,7 +60,6 @@ namespace ParkingAppAPI.Models {
                     capacity = 0;
                 }
             }
-
             return new Entry(now, capacity);
         }
         #endregion

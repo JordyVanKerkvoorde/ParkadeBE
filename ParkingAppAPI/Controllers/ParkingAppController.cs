@@ -12,13 +12,19 @@ namespace ParkingAppAPI.Controllers
     [ApiController]
     public class ParkingAppController : ControllerBase
     {
+        private readonly IParkingRepository _parkingRepository;
 
-        public ParkingAppController() {
-
+        public ParkingAppController(IParkingRepository parkingRepository) {
+            _parkingRepository = parkingRepository;
         }
 
+        [HttpGet]
         public IEnumerable<Parking> GetParkings() {
-            throw new NotSupportedException();
+            foreach (var parking in _parkingRepository.GetAll()) {
+                parking.AddRandomEntry();
+                _parkingRepository.SaveChanges();
+            }
+            return _parkingRepository.GetAll();
         }
     }
 }
