@@ -18,12 +18,21 @@ namespace ParkingAppAPI.Models {
         #endregion
 
         #region Methods
-        public Parking(int id, string name, double latitude, double longtitude, int maxCap) {
+        public Parking(int id, string name, double latitude, double longtitude, int maxCap, string type) {
             Id = id;
             Name = name;
             Latitude = latitude;
             Longtitude = longtitude;
             MaxCap = maxCap;
+            Entries = new List<Entry>();
+            Type = type;
+        }
+
+        public Parking(int id, string name, int maxCap, string type) {
+            Id = id;
+            Name = name;
+            MaxCap = maxCap;
+            Type = type;
             Entries = new List<Entry>();
         }
 
@@ -31,9 +40,9 @@ namespace ParkingAppAPI.Models {
             Entries.Add(entry);
         }
 
-        public void AddRandomEntry() {
+        /*public void AddRandomEntry() {
             Entries.Add(NewRandomEntry());
-        }
+        }*/
 
         public Entry GetEntry(DateTime time) {
             return Entries.SingleOrDefault(e => e.TimeDay == time);
@@ -45,7 +54,7 @@ namespace ParkingAppAPI.Models {
                     .ThenBy(e => e.TimeDay.Year).FirstOrDefault();
         }
 
-        public Entry NewRandomEntry() {
+        /*public Entry NewRandomEntry() {
             DateTime now = DateTime.Now;
             int capacity;
             Random r = new Random();
@@ -61,7 +70,7 @@ namespace ParkingAppAPI.Models {
                 }
             }
             return new Entry(now, capacity);
-        }
+        }*/
         #endregion
     }
 }

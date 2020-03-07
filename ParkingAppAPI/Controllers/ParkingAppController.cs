@@ -20,10 +20,6 @@ namespace ParkingAppAPI.Controllers
 
         [HttpGet]
         public IEnumerable<Parking> GetParkings() {
-            foreach (var parking in _parkingRepository.GetAll()) {
-                parking.AddRandomEntry();
-                _parkingRepository.SaveChanges();
-            }
             return _parkingRepository.GetAll();
         }
     }

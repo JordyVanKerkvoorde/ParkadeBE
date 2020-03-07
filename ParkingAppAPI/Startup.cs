@@ -28,14 +28,13 @@ namespace ParkingAppAPI {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<ParkingContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ParkingContext")));
-            services.AddScoped<ParkingDataInitializer>();
             services.AddScoped<IParkingRepository, ParkingRepository>();
             services.AddSwaggerDocument();
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ParkingDataInitializer parkingDataInitializer) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
@@ -43,11 +42,10 @@ namespace ParkingAppAPI {
             }
 
             app.UseHttpsRedirection();
+            app.UseRouting();
             //app.UseMvc();
             app.UseSwaggerUi3();
             app.UseSwagger();
-
-            parkingDataInitializer.InitializeData();
         }
     }
 }
