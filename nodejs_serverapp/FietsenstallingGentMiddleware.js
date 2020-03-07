@@ -49,4 +49,4 @@ class Parking{
 
 setInterval(() =>{
   getData();
-}, 3000); //om de 5 minuten data ophalen
+}, 300000); //om de 5 minuten data ophalen
