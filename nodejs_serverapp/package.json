@@ -1,0 +1,15 @@
+{
+  "name": "parkingproject",
+  "version": "1.0.0",
+  "description": "Translates data from open data api to needed data for own api",
+  "main": "ParkingsGentMiddleware.js",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordy Van Kerkvoorde",
+  "license": "ISC"
+}
