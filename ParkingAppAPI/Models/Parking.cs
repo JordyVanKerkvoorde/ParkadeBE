@@ -10,9 +10,9 @@ namespace ParkingAppAPI.Models {
         public string Name { get; set; }
         public string Type { get; set; }
         //X-AS
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
         //Y-AS
-        public double Longtitude { get; set; }
+        public double? Longtitude { get; set; }
         public int MaxCap { get; set; }
         public ICollection<Entry> Entries { get; set; }
         #endregion

@@ -8,13 +8,13 @@ namespace ParkingAppAPI.Models {
         public int Id { get; set; }
         #region Properties
         public DateTime TimeDay { get; set; }
-        public int Occupied { get; set; }
+        public int Available { get; set; }
         #endregion
 
         #region Methods
-        public Entry( DateTime timeDay, int occupied) {
+        public Entry( DateTime timeDay, int available) {
             TimeDay = timeDay;
-            Occupied = occupied;
+            Available = available;
         }
         #endregion
     }
