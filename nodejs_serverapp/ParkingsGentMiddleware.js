@@ -68,7 +68,7 @@ async function databaseconn(parking){
 
    try{
      //connection string afgeschermd, database draait op externe server
-       let pool = await sql.connect('Server=xxx.xxx.xxx.xxx,51433;Database=Parkings;User Id=xxxxx;Password=xxxxxxx;');
+       let pool = await sql.connect('Server=xxx.xxx.xxx.xxx,xxxx;Database=Parkings;User Id=xxxxx;Password=xxxxxxx;');
          await pool.request().query(`
           if not exists (select 1 from [Parking] where [Name] = '${name}')
           begin
