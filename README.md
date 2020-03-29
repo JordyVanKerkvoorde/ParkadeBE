@@ -16,5 +16,14 @@ Indien ik andere steden aan de applicatie wil toevoegen hoef ik normaal enkel ee
 # node.js
 De node.js kant zijn server applicaties die op de achtergrond draaien om zo de data van Open Data Portaal Gent<sup>1</sup> te filteren naar nuttige data voor mijn project en dit door te sturen naar de SQL database, dit wordt om de 5 minuten geupdate.
 
+# Swagger
+![swagger](https://user-images.githubusercontent.com/44192604/77856215-eddf9300-71f5-11ea-8e77-49558436736d.PNG)
+
+![LatestEntry](https://user-images.githubusercontent.com/44192604/77856222-f89a2800-71f5-11ea-86f0-26ca69195839.PNG)
+
+![AllParkings](https://user-images.githubusercontent.com/44192604/77856225-02239000-71f6-11ea-9776-9449e8b18e66.PNG)
+
+![Parking](https://user-images.githubusercontent.com/44192604/77856229-0a7bcb00-71f6-11ea-9bb6-ff2e936a66f7.PNG)
+
 # Referenties
 <sup>1</sup> https://data.stad.gent/explore/?flg=nl&disjunctive.keyword&disjunctive.theme&sort=modified
