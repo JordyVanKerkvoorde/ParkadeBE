@@ -30,6 +30,11 @@ De node.js kant bestaat uit server applicaties die op de achtergrond draaien om 
 # Class Diagram
 ![class](https://user-images.githubusercontent.com/44192604/77858683-410d1200-7205-11ea-89ea-a27c055c7c1f.PNG)
 
+# Backend document
+
+![Knipsel](https://user-images.githubusercontent.com/44192604/77860533-3146fb00-7210-11ea-8662-1a1b6b8cef26.PNG)
+
+
 # Vragen
  - Op de manier waarop ik de applicatie maak is er geen nood aan een Initalizer/seeder in de context, de data komt vanuit de serverapplicaties en ik maak dan ook een connectie met een externe zelf gecreëerde database. Is dit een probleem, of mag dit zo behouden worden?
 
