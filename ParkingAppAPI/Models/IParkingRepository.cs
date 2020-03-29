@@ -10,6 +10,5 @@ namespace ParkingAppAPI.Models {
         void AddParking(Parking parking);
         void DeleteParking(Parking parking);
         void UpdateParking(Parking parking);
-        void SaveChanges();
     }
 }

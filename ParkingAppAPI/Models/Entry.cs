@@ -9,11 +9,13 @@ namespace ParkingAppAPI.Models {
         #region Properties
         public DateTime TimeDay { get; set; }
         public int Available { get; set; }
+        public Parking Parking { get; set; }
+
         #endregion
 
         #region Methods
-        public Entry( DateTime timeDay, int available) {
-            TimeDay = timeDay;
+        public Entry(int available) {
+            TimeDay = DateTime.Now;
             Available = available;
         }
         #endregion

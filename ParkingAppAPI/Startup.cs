@@ -23,17 +23,16 @@ namespace ParkingAppAPI {
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<ParkingContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ParkingContext")));
             services.AddScoped<IParkingRepository, ParkingRepository>();
+            services.AddScoped<IEntryRepository, EntryRepository>();
             services.AddSwaggerDocument();
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
@@ -42,10 +41,14 @@ namespace ParkingAppAPI {
             }
 
             app.UseHttpsRedirection();
-            app.UseRouting();
-            //app.UseMvc();
             app.UseSwaggerUi3();
             app.UseSwagger();
+            app.UseRouting();
+            
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+
+            });
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ParkingAppAPI.Data.Repositories {
         private readonly DbSet<Parking> _parkings;
         public ParkingRepository(ParkingContext context) {
             _context = context;
-            _parkings = context.Parkings;
+            _parkings = context.Parking;
         }
 
         public void AddParking(Parking parking) {
@@ -24,11 +24,11 @@ namespace ParkingAppAPI.Data.Repositories {
         }
 
         public IEnumerable<Parking> GetAll() {
-            return _parkings.Include(p => p.Entries);
+            return _parkings.ToList();
         }
 
         public Parking GetParkingById(int id) {
-            return _parkings.Include(p => p.Entries).SingleOrDefault(p => p.Id == id);
+            return _parkings.SingleOrDefault(p => p.Id == id);
         }
 
         public void SaveChanges() {
