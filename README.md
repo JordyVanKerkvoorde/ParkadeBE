@@ -1,4 +1,5 @@
 # 1920-b1-be-JordyVanKerkvoorde
+__zie ook aangemaakte wiki op deze github repo__
 ## Info
 De bedoeling is om de live data van Open Data Portaal Gent<sup>1</sup> aan te spreken en die data op te slaan in een MSSQL database.
 Deze data dient dus doorgegeven te worden aan de SQL server. Nadien kan de data uit de database bevraagd worden door de frontend d.m.v. een call naar mijn API.
