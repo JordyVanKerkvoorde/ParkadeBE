@@ -20,10 +20,10 @@ Op dit moment word de API nog niet gehost.
 
 De SQL server database en nodejs app werd op een DigitalOcean server geplaatst om zo de inloggegevens te kunnen meegeven:
 
-IP: 178.62.218.13
-Poort: 1433
-Gebruikersnaam: SA
-Wachtwoord: Admin20204Parkade763325
+- IP: 178.62.218.13
+- Poort: 1433
+- Gebruikersnaam: SA
+- Wachtwoord: Admin20204Parkade763325
 
 # node.js
 De node.js kant bestaat uit server applicaties die op de achtergrond draaien om zo de data van Open Data Portaal Gent<sup>1</sup> te filteren naar nuttige data voor mijn project en dit door te sturen naar de SQL database, dit wordt om de 5 minuten geupdate. Op dit moment is enkel de data van de auto parkeergarages up to date en aan de database gelinkt, de fietsenstallingen volgen, maar dit zou geen effect mogen hebben op de API noch de database. (Databasegegevens zie instellingen .NET API)
