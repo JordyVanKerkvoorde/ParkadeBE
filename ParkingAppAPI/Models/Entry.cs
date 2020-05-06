@@ -9,7 +9,7 @@ namespace ParkingAppAPI.Models {
         #region Properties
         public DateTime TimeDay { get; set; }
         public int Available { get; set; }
-        public Parking Parking { get; set; }
+        public int ParkingId { get; set; }
 
         #endregion
 

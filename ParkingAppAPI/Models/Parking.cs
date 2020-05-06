@@ -10,14 +10,15 @@ namespace ParkingAppAPI.Models {
         public string Name { get; set; }
         public string Type { get; set; }
         //X-AS
-        public string? Latitude { get; set; }
+        public double? Latitude { get; set; }
         //Y-AS
-        public string? Longtitude { get; set; }
+        public double? Longtitude { get; set; }
         public int MaxCap { get; set; }
+        public Entry LatestEntry { get; set; }
         #endregion
 
         #region Methods
-        public Parking(int id, string name, string latitude, string longtitude, int maxCap, string type) {
+        public Parking(int id, string name, double latitude, double longtitude, int maxCap, string type) {
             Id = id;
             Name = name;
             Latitude = latitude;

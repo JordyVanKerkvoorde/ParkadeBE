@@ -28,7 +28,7 @@ namespace ParkingAppAPI.Data.Repositories {
         }
 
         public Parking GetParkingById(int id) {
-            return _parkings.SingleOrDefault(p => p.Id == id);
+            return _parkings.Where(p => p.Id == id).Include(p => p.LatestEntry).FirstOrDefault();
         }
 
         public void SaveChanges() {

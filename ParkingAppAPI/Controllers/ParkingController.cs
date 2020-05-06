@@ -27,7 +27,12 @@ namespace ParkingAppAPI.Controllers
         /// <returns>Array of parkings with their details</returns>
         [HttpGet]
         public IEnumerable<Parking> GetParkings() {
-            return _parkingRepository.GetAll();
+            IEnumerable <Parking> parkings = _parkingRepository.GetAll();
+            foreach (var parking in parkings) {
+                parking.LatestEntry = _entryRepository.GetLatestEntry(parking.Id);
+            }
+
+            return parkings;
         }
 
        

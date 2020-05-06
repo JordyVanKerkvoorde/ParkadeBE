@@ -15,8 +15,7 @@ namespace ParkingAppAPI.Data {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            //via externe server
-            var connectionString = @"Server=xxxxx;Database=Parkings;User Id=xxxxx;Password=xxxxx;";
+            var connectionString = @"Server=178.62.218.13,1433;Database=ParkingsDB;User Id=SA;Password=Admin20204Parkade763325;";
             optionsBuilder.UseSqlServer(connectionString);
         }
 

@@ -8,6 +8,6 @@ namespace ParkingAppAPI.Models {
 
         IEnumerable<Entry> GetAll(int parkingId);
         Entry GetLatestEntry(int parkingId);
-        List<(DateTime, int)> LastWeek(int parkingId);
+        DataWrapper todayChartData(int parkingId);
     }
 }

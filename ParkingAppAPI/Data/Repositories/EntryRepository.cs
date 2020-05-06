@@ -15,14 +15,22 @@ namespace ParkingAppAPI.Data.Repositories {
             _entries = context.Entry;
         }
         public IEnumerable<Entry> GetAll(int parkingId) {
-            return _entries.Where(e => e.Parking.Id == parkingId).Include(e => e.Parking);
+            return _entries.Where(e => e.ParkingId == parkingId);
         }
 
         public Entry GetLatestEntry(int parkingId) {
-            return _entries.Where(e => e.Parking.Id == parkingId).OrderByDescending(e => e.TimeDay).FirstOrDefault();
+            return _entries.Where(e => e.ParkingId == parkingId).OrderByDescending(e => e.TimeDay).FirstOrDefault();
         }
 
-        public List<(DateTime, int)> LastWeek(int parkingId) {
+        public DataWrapper todayChartData(int parkingId) {
+            // subtracting 2 hours to account for the 2 hour difference between sql server time and current time
+            DateTime timeDelimiter = DateTime.Now.Date.AddHours(-2);
+            List<Entry> timeEntries = _entries.Where(e => e.ParkingId == parkingId && e.TimeDay > timeDelimiter).ToList();
+            DataWrapper dataObj = new DataWrapper(
+                timeEntries.Select(e => e.TimeDay).ToList(),
+                timeEntries.Select(e => e.Available).ToList()
+                );
+            return dataObj;
             throw new NotImplementedException();
         }
     }

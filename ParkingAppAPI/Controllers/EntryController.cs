@@ -22,13 +22,13 @@ namespace ParkingAppAPI.Controllers
 
         
         /// <summary>
-        /// Get the latest entry of a parking with given id
+        /// Returns a dataset of entrys for a given parkingid with the entrys for that day
         /// </summary>
         /// <param name="parkingId"></param>
         /// <returns>entry object</returns>
         [HttpGet("{parkingId}")]
-        public ActionResult<Entry> GetLatestEntry(int parkingId) {
-            return _entryRepository.GetLatestEntry(parkingId);
+        public ActionResult<DataWrapper> GetTodaysChartData(int parkingId) {
+            return _entryRepository.todayChartData(parkingId);
         }
     }
 }
