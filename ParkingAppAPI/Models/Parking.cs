@@ -32,19 +32,7 @@ namespace ParkingAppAPI.Models {
             Name = name;
             MaxCap = maxCap;
             Type = type;
-
-
-
-            /*public Entry GetEntry(DateTime time) {
-                return Entries.SingleOrDefault(e => e.TimeDay == time);
-            }*/
-
-            /*public Entry GetLatestEntry() {
-                return Entries.OrderBy(e => e.TimeDay.TimeOfDay)
-                        .ThenBy(e => e.TimeDay.Date)
-                        .ThenBy(e => e.TimeDay.Year).FirstOrDefault();
-            }*/
-            #endregion
         }
+        #endregion
     }
 }

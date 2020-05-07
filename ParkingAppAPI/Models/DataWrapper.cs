@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 namespace ParkingAppAPI.Models {
     public class DataWrapper {
 
-        public List<DateTime> TimeData { get; set; }
-        public List<int> CapacityData { get; set; }
+        public IEnumerable<DateTime> TimeData { get; set; }
+        public IEnumerable<int> CapacityData { get; set; }
 
         public DataWrapper() {
         }

@@ -9,6 +9,7 @@ namespace ParkingAppAPI.Data {
     public class ParkingContext : DbContext {
         public DbSet<Parking> Parking { get; set; }
         public DbSet<Entry> Entry { get; set; }
+        public DbSet<Suggestion> Suggestion { get; set; }
 
         public ParkingContext(DbContextOptions<ParkingContext> options) : base(options) {
 

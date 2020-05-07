@@ -29,6 +29,7 @@ namespace ParkingAppAPI {
                 options.UseSqlServer(Configuration.GetConnectionString("ParkingContext")));
             services.AddScoped<IParkingRepository, ParkingRepository>();
             services.AddScoped<IEntryRepository, EntryRepository>();
+            services.AddScoped<ISuggestionRepository, SuggestionRepository>();
             services.AddSwaggerDocument();
             services.AddCors(options => options.AddPolicy("AllowAllOrigins", builder => builder.AllowAnyOrigin()));
         }
