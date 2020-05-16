@@ -39,6 +39,12 @@ De node.js kant bestaat uit server applicaties die op de achtergrond draaien om 
 
 ![Parking](https://user-images.githubusercontent.com/44192604/77856229-0a7bcb00-71f6-11ea-9bb6-ff2e936a66f7.PNG)
 
+![image](https://user-images.githubusercontent.com/44192604/81346437-8f41ea80-90ba-11ea-9515-62a9ade3948f.png)
+
+![image](https://user-images.githubusercontent.com/44192604/81346496-a8e33200-90ba-11ea-83e0-5c53bc32a46f.png)
+
+![image](https://user-images.githubusercontent.com/44192604/81346539-bd272f00-90ba-11ea-9c94-85c0cea68449.png)
+
 # Class Diagram
 ![class](https://user-images.githubusercontent.com/44192604/77858683-410d1200-7205-11ea-89ea-a27c055c7c1f.PNG)
 
