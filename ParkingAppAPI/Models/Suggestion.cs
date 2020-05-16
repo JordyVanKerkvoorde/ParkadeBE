@@ -13,8 +13,7 @@ namespace ParkingAppAPI.Models {
         public string Description { get; set; }
         //maybe add enumtype to see specify if the suggestion was implemented/trashed/notb
 
-        public Suggestion(int id, string name, double longtitude, double latitude, string description) {
-            Id = id;
+        public Suggestion(string name, double longtitude, double latitude, string description) {
             Name = name;
             Longtitude = longtitude;
             Latitude = latitude;

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ParkingAppAPI.Models;
 
 namespace ParkingAppAPI.Data {
-    public class ParkingContext : DbContext {
+    public class ParkingContext : IdentityDbContext {
         public DbSet<Parking> Parking { get; set; }
         public DbSet<Entry> Entry { get; set; }
         public DbSet<Suggestion> Suggestion { get; set; }
+        public DbSet<ParkUser> ParkUser { get; set; }
 
         public ParkingContext(DbContextOptions<ParkingContext> options) : base(options) {
 

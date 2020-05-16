@@ -43,6 +43,8 @@ namespace ParkingAppAPI.Controllers {
         /// <param name="suggestion">the suggestion</param>
         [HttpPost]
         public ActionResult<Suggestion> PostSuggestion(SuggestionDTO suggestion) {
+            Console.WriteLine("post method called");
+            Console.WriteLine(suggestion.ToString());
             Suggestion suggestionToCreate = new Suggestion() {
                 Name = suggestion.Name,
                 Longtitude = suggestion.Longtitude,
