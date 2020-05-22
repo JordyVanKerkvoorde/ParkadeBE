@@ -6,6 +6,7 @@
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <UserSecretsId>8d48b856-001a-4f73-a6c3-19c7f02b662a</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

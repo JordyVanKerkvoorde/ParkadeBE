@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ParkingAppAPI.DTO;
 using ParkingAppAPI.Models;
@@ -11,6 +10,7 @@ namespace ParkingAppAPI.Controllers {
     [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class SuggestionController : ControllerBase
     {
@@ -20,6 +20,12 @@ namespace ParkingAppAPI.Controllers {
             _suggestions = suggestions;
         }
 
+
+        // GET: api/Suggestions/1
+        /// <summary>
+        /// Returns all the suggestions in the database
+        /// </summary>
+        /// <returns>Suggestion</returns>
         [HttpGet]
         public IEnumerable<Suggestion> GetSuggestions() {
             return _suggestions.GetSuggestions();

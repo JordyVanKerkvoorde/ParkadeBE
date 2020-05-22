@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkingAppAPI.Models;
@@ -9,6 +11,7 @@ using ParkingAppAPI.Models;
 namespace ParkingAppAPI.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     public class ParkingController : ControllerBase
     {
@@ -26,6 +29,7 @@ namespace ParkingAppAPI.Controllers
         /// </summary>
         /// <returns>Array of parkings with their details</returns>
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<Parking> GetParkings() {
             IEnumerable <Parking> parkings = _parkingRepository.GetAll();
             foreach (var parking in parkings) {
@@ -42,6 +46,7 @@ namespace ParkingAppAPI.Controllers
         /// <param name="id"></param>
         /// <returns>parking object</returns>
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Parking> GetParking(int id) {
             Parking parking = _parkingRepository.GetParkingById(id);
             if (parking == null) return NotFound();

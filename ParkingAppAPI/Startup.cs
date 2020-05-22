@@ -80,7 +80,7 @@ namespace ParkingAppAPI {
                 c.DocumentName = "apidocs";
                 c.Title = "Recipe API";
                 c.Version = "v1";
-                c.Description = "The Recipe API documentation description.";
+                c.Description = "The API for Parkade";
                 c.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme {
                     Type = OpenApiSecuritySchemeType.ApiKey,
                     Name = "Authorization",
