@@ -16,14 +16,6 @@ Indien ik andere steden aan de applicatie wil toevoegen, kan dat via een nieuwe 
 ## instellingen
 ~De database draait op een externe server thuis bij een vriend van me, aangezien die liever niet zijn IP en credentials publiek stelt heb ik er dan ook voor gekozen dit te respecteren en deze informatie in de connectionstring te censureren. Echter ben ik op dit moment nog zelf bezig met het opstellen van mijn eigen server dus in de komende week zal (hopelijk) de database en serverapplicaties op mijn server staan. Als dit dan echt nodig is kan ik dan wel de nodige info doorgeven om de applicatie lokaal te kunnen runnen.~
 
-Op dit moment word de API nog niet gehost.
-
-De SQL server database en nodejs app werd op een DigitalOcean server geplaatst om zo de inloggegevens te kunnen meegeven:
-
-- IP: 178.62.218.13
-- Poort: 1433
-- Gebruikersnaam: SA
-- Wachtwoord: Admin20204Parkade763325
 
 # node.js
 De node.js kant bestaat uit server applicaties die op de achtergrond draaien om zo de data van Open Data Portaal Gent<sup>1</sup> te filteren naar nuttige data voor mijn project en dit door te sturen naar de SQL database, dit wordt om de 5 minuten geupdate. Op dit moment is enkel de data van de auto parkeergarages up to date en aan de database gelinkt, de fietsenstallingen volgen, maar dit zou geen effect mogen hebben op de API noch de database. (Databasegegevens zie instellingen .NET API)
